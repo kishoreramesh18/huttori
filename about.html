@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taekwondo Association Tamilnadu</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================
+   TOP BLUE STRIP (Desktop)
+============================ */
+.top-strip {
+    background: #021b77;
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ============================
+   NAVIGATION BAR
+============================ */
+.nav-bar {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+    letter-spacing: 0.5px;
+}
+
+/* Hamburger Icon (Hidden Desktop) */
+.hamburger {
+    display: none;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+/* ============================
+   MOBILE SLIDE MENU
+============================ */
+.mobile-menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0,0,60,0.95);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 25px;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* ============================
+   HERO BANNER (DESKTOP FULL IMAGE)
+============================ */
+.hero-banner {
+    width: 100%;
+    height: auto;
+    background-image: url('./ta.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    aspect-ratio: 16/6; /* Landscape ratio */
+}
+
+/* ============================
+       MOBILE VIEW
+============================ */
+@media (max-width: 600px) {
+
+    /* Hide desktop top strip */
+    .top-strip {
+        display: none;
+    }
+
+    /* Hide desktop navigation */
+    .nav-links {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Bigger logo for mobile */
+    .logo {
+        width: 120px;
+    }
+
+    /* FULL PORTRAIT HERO IMAGE */
+    .hero-banner {
+        background-image: url('./TATA.png');  /* Mobile image */
+        background-size: contain;             /* FULL image, no crop */
+        background-position: center top;
+        background-repeat: no-repeat;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 9/16; /* Portrait ratio */
+    }
+
+    /* Remove shadow for mobile */
+    .nav-bar {
+        box-shadow: none;
+        border-bottom: none;
+        padding: 14px 20px;
+    }
+}
+
+
+/* ============================
+       TABLET VIEW
+============================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .logo {
+        width: 100px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+}
+
+/* =====================================================
+   BASE STYLE (applies to both sections)
+===================================================== */
+.about-section,
+.about-tat-section {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-title,
+.about-title-tat {
+    font-size: 32px;
+    font-weight: 700;
+    width: 80%;
+    max-width: 1200px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.about-title .line,
+.about-title-tat .line {
+    display: inline-block;
+    width: 6px;
+    height: 35px;
+    background: #cc0000;
+    margin-right: 15px;
+}
+
+.about-card,
+.about-card-tat {
+    width: 80%;
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text,
+.about-text-tat {
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;     /* Show only 3 lines */
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px;
+}
+
+.read-more,
+.read-more-tat {
+    display: inline-block;
+    align-self: flex-end;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #cc0000;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+
+/* =====================================================
+   DESKTOP VIEW (1025px and above) — INDIA + TAMILNADU
+===================================================== */
+@media (min-width: 1025px) {
+
+    .about-section,
+    .about-tat-section {
+        padding: 60px 0;
+    }
+
+    .about-title,
+    .about-title-tat {
+        font-size: 34px;
+        width: 80%;
+        max-width: 1200px;
+        margin-bottom: 25px;
+    }
+
+    .about-title .line,
+    .about-title-tat .line {
+        width: 6px;
+        height: 40px;
+    }
+
+    .about-card,
+    .about-card-tat {
+        width: 80%;
+        max-width: 1200px;
+        padding: 35px 45px;
+    }
+
+    .about-text,
+    .about-text-tat {
+        font-size: 19px;
+        line-height: 32px;
+        -webkit-line-clamp: 3;
+    }
+
+    .read-more,
+    .read-more-tat {
+        font-size: 18px;
+        align-self: flex-end;
+    }
+}
+
+
+
+/* =====================================================
+   MOBILE VIEW (max-width: 600px) — INDIA + TAMILNADU
+===================================================== */
+@media (max-width: 600px) {
+
+    .about-section,
+    .about-tat-section {
+        padding-top: 1px;
+        margin-top: -135px;
+    }
+
+    /* Title left aligned */
+    .about-title,
+    .about-title-tat {
+        font-size: 20px;
+        width: 92%;
+        margin: 0 auto 10px auto;
+        text-align: left;
+    }
+
+    .about-title .line,
+    .about-title-tat .line {
+        width: 4px;
+        height: 24px;
+    }
+
+    /* Card box */
+    .about-card,
+    .about-card-tat {
+        width: 92%;
+        padding: 20px;
+        margin: 5px auto;
+    }
+
+    .about-text,
+    .about-text-tat {
+        font-size: 15px;
+        line-height: 24px;
+        -webkit-line-clamp: 3;
+        margin-bottom: 8px;
+    }
+
+    /* Read More — inside card */
+    .read-more,
+    .read-more-tat {
+        font-size: 15px;
+        margin-top: 5px;
+        align-self: flex-start;
+    }
+}
+
+/* FOOTER BASE */
+.footer {
+    background: linear-gradient( 115deg,
+        #0DF2FF 0%,
+        #00B7FF 18%,
+        #0078FF 38%,
+        #00407B 65%,
+        #001227 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* TOP LOGOS BAR */
+.footer-top-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-top-logos img {
+    width: 110px;
+    height: auto;
+}
+
+/* MAIN SECTION */
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 8%;
+    gap: 40px;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-about-text {
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links li {
+    list-style: none;
+    font-size: 17px;
+    line-height: 32px;
+    padding-left: 0;
+}
+
+.footer-btn {
+    background: #1b1e20;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* BOTTOM SECTION */
+.footer-bottom {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+.footer-social img {
+    width: 35px;
+    margin: 0 10px;
+}
+
+.footer-bottom-text {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/* ============================
+   MOBILE FOOTER (max-width: 600px)
+   EXACT layout you requested
+============================ */
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 30px 18px;
+        background: linear-gradient(180deg, #8c0a6f, #c2127a, #d4217f);
+    }
+
+    /* Stack everything vertically */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    /* About Section */
+    .footer-about h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .footer-about p {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 20px;
+    }
+
+    .footer-about .btn-more {
+        background: #1e1e1e;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* Resources */
+    .footer-links h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .footer-links ul {
+        padding-left: 0;
+    }
+
+    .footer-links li {
+        list-style: none;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    .footer-contact h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .footer-contact div {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .footer-contact p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* Social icons */
+    .footer-social {
+        display: flex;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .footer-social img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Copyright center aligned */
+    .footer-copy {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 13px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- TOP BLUE STRIP (DESKTOP ONLY) -->
+    <div class="top-strip">
+      <marquee behavior="" direction="">  | 4th SUB-JUNIOR & SENIOR NATIONAL CHAMPIONSHIP 2025 |</marquee>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="nav-bar">
+        <img src="TAT.png" class="logo">
+
+        <nav class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">JOIN TAT</a>
+            <a href="#">SIGN IN</a>
+            <a href="#">CONTACT US</a>
+        </nav>
+
+        <div class="hamburger" id="hamburgerBtn">&#9776;</div>
+    </header>
+
+    <!-- MOBILE SLIDE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" id="closeBtn">×</div>
+
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">JOIN TAT</a>
+        <a href="#">SIGN IN</a>
+        <a href="#">CONTACT US</a>
+    </div>
+
+    <!-- HERO IMAGE (DESKTOP + MOBILE RESPONSIVE) -->
+    <div class="hero-banner"></div>
+
+<section class="about-tat-section">
+    <h2 class="about-title-tat">
+        <span class="line"></span>
+        About TAEKWONDO ASSOCIATION TAMILNADU
+    </h2>
+
+    <div class="about-card-tat">
+        <p class="about-text-tat">
+           Taekwondo Association Tamilnadu is a state-level body dedicated to developing and promoting Taekwondo across Tamil Nadu. It functions under the framework of India Taekwondo and is affiliated with the Sports Development Authority of Tamil Nadu (SDAT). The association conducts state championships, training camps, and certification programs to support athletes, coaches, and referees. Through its structured development pathway, TATN enables athletes from Tamil Nadu to participate in nationally recognized competitions and advance toward higher levels of the sport.
+        </p>
+
+        <a href="#" class="read-more-tat">>>READ MORE</a>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <!-- TOP LOGOS BAR -->
+    <div class="footer-top-logos">
+        <img src="logo1.png">
+        <img src="logo2.png">
+        <img src="logo3.png">
+        <img src="logo4.png">
+        <img src="logo5.png">
+        <img src="logo6.png">
+        <img src="logo7.png">
+        <img src="logo8.png">
+    </div>
+
+    <!-- MAIN FOOTER CONTENT -->
+    <div class="footer-sections">
+
+        <!-- ABOUT SECTION -->
+        <div class="footer-column">
+            <h3>About India Taekwondo</h3>
+            <p class="footer-about-text">
+                India Taekwondo is the governing body for the sport of Taekwondo in India.
+                It is responsible for promoting and organizing Taekwondo competitions,
+                training athletes, and representing India in international…
+            </p>
+            <button class="footer-btn">MORE ABOUT</button>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <ul class="footer-links">
+                <li>> About Us</li>
+                <li>> Terms and Condition</li>
+                <li>> Privacy Policy</li>
+                <li>> Refund Policy</li>
+                <li>> Contact Us</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT DETAILS -->
+        <div class="footer-column">
+            <h3>Contact Detail</h3>
+            <p>403, Timmy Arcade, Makhwana Road,<br>
+                Near Marol Naka Metro Station,<br>
+                Andheri-East, Mumbai-400059.</p>
+
+            <p>📞 9136965497</p>
+            <p>✉️ indiataekwondo2020@gmail.com</p>
+            <p>🌐 www.taekwondoindia.com</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+        <div class="footer-social">
+            <img src="facebook.png">
+            <img src="instagram.png">
+            <img src="twitter.png">
+        </div>
+
+        <p class="footer-bottom-text">
+            All Rights Reserved © 2026, INDIA-TAEKWONDO
+        </p>
+    </div>
+
+</footer>
+
+    
+
+
+</body>
+
+<!-- JAVASCRIPT -->
+<script src="index.js"></script>
+
+</html>

@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   TOP BLUE STRIP
+================================ */
+.top-strip {
+    background: #021b77;
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 16px;
+}
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+.nav-bar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+}
+
+.logo {
+    width: 90px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.hamburger {
+    font-size: 34px;
+    display: none;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 60, 0.95);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-left: 25px;
+    transition: .4s ease;
+    z-index: 999;
+}
+.mobile-menu a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    color: white;
+}
+
+/* ================================
+   HERO IMAGE
+================================ */
+.hero-banner {
+    width: 100%;
+    height: auto;
+    background-image: url('ta.png');
+    background-size: cover;
+    background-position: center top;
+    aspect-ratio: 16/6;
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+.about-tat-section {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-title-tat {
+    width: 80%;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.about-title-tat .line {
+    width: 6px;
+    height: 35px;
+    background: #cc0000;
+    margin-right: 15px;
+}
+
+.about-card-tat {
+    width: 80%;
+    background: white;
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
+}
+
+.about-text-tat {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 15px;
+}
+
+.read-more-tat {
+    color: #cc0000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================================
+   FOOTER DESKTOP
+================================ */
+.footer {
+    background: linear-gradient(115deg,#0DF2FF,#00B7FF,#0078FF,#00407B,#001227);
+    color: white;
+}
+
+/* LOGO ROW FIXED */
+.footer-top-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.footer-top-logos img {
+    width: 110px;
+    height: auto;
+    border-radius: 100px;
+}
+
+/* MAIN FOOTER */
+.footer-sections {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 8%;
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.footer-about-text {
+    font-size: 17px;
+    line-height: 28px;
+}
+
+.footer-links li {
+    list-style: none;
+    line-height: 32px;
+    font-size: 17px;
+}
+
+.footer-btn {
+    background: #1b1e20;
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-bottom-text {
+    margin-top: 20px;
+}
+
+/* SOCIAL ICONS */
+.footer-social img {
+    width: 35px;
+    margin: 0 10px;
+    border-radius: 50px;
+}
+
+/* ================================
+   MOBILE VIEW FIX (IMPORTANT)
+================================ */
+@media (max-width: 600px) {
+
+    .top-strip { display: none; }
+
+    .nav-links { display: none; }
+
+    .hamburger { display: block; }
+
+    .logo { width: 120px; }
+
+    .hero-banner {
+        background-image: url('TATA.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        aspect-ratio: 9/16;
+    }
+
+    .about-tat-section {
+        margin-top: -40px;
+    }
+
+    /* FOOTER MOBILE */
+    .footer {
+        background: linear-gradient(115deg,#0DF2FF,#00B7FF,#0078FF,#00407B,#001227);
+        padding: 25px 15px;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        gap: 35px;
+        padding: 20px 5%;
+    }
+
+    .footer-top-logos img {
+        width: 70px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-column h3 {
+        font-size: 22px;
+    }
+
+    .footer-about-text,
+    .footer-links li {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .footer-social img {
+        width: 40px;
+    }
+
+    .footer-bottom-text {
+        font-size: 14px;
+    }
+}
